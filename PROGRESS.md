@@ -6,26 +6,38 @@ This file tracks the current learning state and should be updated after every le
 
 | Field | Value |
 | --- | --- |
-| Current lesson | None |
-| Current milestone | Foundation |
-| Overall progress percentage | 0% |
+| Current lesson | Lesson 006: Eloquent Internals |
+| Current milestone | Eloquent |
+| Overall progress percentage | 6% |
 | Last updated | 2026-07-17 |
 
 ## Completed Lessons
 
-No lessons completed yet.
+- Lesson 006: Eloquent Internals
 
 ## Knowledge Acquired
 
-No tracked knowledge yet.
+- Eloquent stores model data in `attributes`, not public column properties.
+- `__get` reads from internal attributes and `__set` writes into internal attributes.
+- `original` is the clean database snapshot used for change detection.
+- Dirty checking compares current `attributes` against `original`.
+- Hydration loads database rows into model state without marking them dirty.
+- `save()` only updates changed fields for existing models.
+- A second `save()` with no changes usually does not issue an `UPDATE`.
+- Eloquent uses convention over configuration for default table names.
+- Eloquent Builder wraps Query Builder while preserving model-level behavior.
 
 ## Senior Skills Acquired
 
-No tracked senior skills yet.
+- Reasoning about ORM state instead of treating models as plain PHP objects.
+- Debugging persistence behavior through dirty checking and hydration.
+- Explaining trade-offs between dynamic attributes and public properties.
+- Separating model-level responsibilities from SQL query construction.
+- Recognizing when Laravel conventions improve maintainability.
 
 ## Practice Completed
 
-No practice completed yet.
+- Practice tasks created for Lesson 006: Eloquent Internals.
 
 ## Mini-Projects Completed
 

@@ -26,7 +26,7 @@ Statuses:
 | Configuration | Not Started | Config files, environment variables, caching, production configuration. |
 | Database | Not Started | Migrations, transactions, indexes, constraints, schema design. |
 | Query Builder | Not Started | Fluent queries, joins, aggregates, pagination, performance. |
-| Eloquent | Not Started | Models, scopes, accessors, mutators, casts, lifecycle events. |
+| Eloquent | In Progress | Models, internal state, attributes, original snapshots, dirty checking, hydration, builders. |
 | Relationships | Not Started | One-to-one, one-to-many, many-to-many, polymorphic relations, eager loading. |
 | Authentication | Not Started | Guards, providers, sessions, tokens, starter kits, security basics. |
 | Authorization | Not Started | Gates, policies, roles, permissions, domain authorization decisions. |
