@@ -41,6 +41,37 @@ Codex is used as the repository maintainer: it applies specifications, creates o
 
 Future lesson updates should provide only the new lesson specification. Codex should infer the correct files to create or update by following `.ai/codex.md`, `ROADMAP.md`, and `PROGRESS.md`.
 
+## Standard Lesson Specification
+
+Future lessons should use the `LAS-0000` format:
+
+```text
+LAS-0007
+
+Milestone:
+HTTP Lifecycle
+
+Lesson:
+HTTP Kernel
+
+Learning Objectives
+...
+
+Knowledge Acquired
+...
+
+Practice
+...
+
+Repository Operations
+...
+
+Commit
+...
+```
+
+The full standard and interpretation rules are defined in [.ai/codex.md](.ai/codex.md).
+
 ## Repository Principles
 
 - Preserve educational history.

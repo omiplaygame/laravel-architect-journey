@@ -17,6 +17,85 @@ The repository is a long-term learning system, not a normal code repository. Fut
 - Keep commits focused.
 - Preserve educational history.
 
+## Standard Lesson Specification
+
+Future lessons should use the `LAS-0000` format. `LAS` means Learning Architecture System.
+
+The lesson specification is the source of truth for repository updates. Codex should treat it as authoritative and use engineering judgment only to fill reasonable gaps.
+
+Recommended format:
+
+```text
+LAS-0007
+
+Milestone:
+HTTP Lifecycle
+
+Lesson:
+HTTP Kernel
+
+Learning Objectives
+- Understand the role of the HTTP Kernel.
+- Trace request flow through middleware.
+- Explain bootstrapping before controller execution.
+
+Knowledge Acquired
+- Laravel HTTP Kernel coordinates request handling.
+- Global middleware runs before route middleware.
+- Service providers are bootstrapped before request dispatch.
+
+Practice
+- Draw the request lifecycle from public/index.php to response.
+- Identify global vs route middleware in a sample Laravel app.
+- Explain where authentication middleware fits.
+
+Senior Architect Focus
+- Request boundaries.
+- Middleware ordering.
+- Framework lifecycle debugging.
+- Production observability.
+
+Status Changes
+- HTTP Lifecycle: In Progress
+
+Repository Operations
+- Create: notes/lesson-007-http-kernel.md
+- Create: practice/lesson-007-http-kernel.md
+- Update: ROADMAP.md
+- Update: PROGRESS.md
+
+Commit
+Add LAS-0007 HTTP Kernel lesson
+```
+
+### Required Fields
+
+- `LAS-0000`
+- `Milestone`
+- `Lesson`
+- `Learning Objectives`
+- `Knowledge Acquired`
+- `Practice`
+- `Repository Operations`
+- `Commit`
+
+### Recommended Fields
+
+- `Senior Architect Focus`
+- `Status Changes`
+- `Resources`
+- `Mini-Project`
+- `Cheatsheet`
+
+### Interpretation Rules
+
+- Use the LAS number as the stable lesson number.
+- Convert `LAS-0007` to `lesson-007-*` filenames unless the specification says otherwise.
+- Follow `Repository Operations` exactly when provided.
+- If `Repository Operations` is incomplete, infer the minimum safe updates from this file.
+- Use the `Commit` value as the commit message.
+- Do not ask clarifying questions unless the specification is unsafe, destructive, or impossible to apply.
+
 ## Future Lesson Update Contract
 
 Future ChatGPT lesson specifications may be short. Codex should infer repository updates from the existing structure.
@@ -24,8 +103,9 @@ Future ChatGPT lesson specifications may be short. Codex should infer repository
 A typical future specification may include only:
 
 ```text
-Lesson:
+LAS-0007
 Milestone:
+Lesson:
 Topics:
 Practice:
 Commit:
