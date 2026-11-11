@@ -14,8 +14,8 @@ Statuses:
 | --- | --- | --- |
 | Foundation | Not Started | PHP, Composer, Laravel project structure, environment setup, conventions. |
 | HTTP Lifecycle | Not Started | Request entry point, kernel, service providers, bootstrapping, lifecycle flow. |
-| Routing | Not Started | Route files, route parameters, constraints, model binding, route organization. |
-| Controllers | Not Started | Thin controllers, action classes, resource controllers, validation boundaries. |
+| Routing | Completed | Route parameters, implicit and explicit model binding, route groups, named routes, throttling. |
+| Controllers | In Progress | Controller actions, Eloquent serialization, implicit binding in controllers; store and request validation are next. |
 | Middleware | Not Started | Request filtering, cross-cutting concerns, auth, throttling, custom middleware. |
 | Requests | Not Started | Form requests, validation rules, authorization, input normalization. |
 | Responses | Not Started | Redirects, JSON responses, resources, API consistency, error responses. |
