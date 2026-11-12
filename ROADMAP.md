@@ -15,7 +15,7 @@ Statuses:
 | Foundation | Not Started | PHP, Composer, Laravel project structure, environment setup, conventions. |
 | HTTP Lifecycle | Not Started | Request entry point, kernel, service providers, bootstrapping, lifecycle flow. |
 | Routing | Completed | Route parameters, implicit and explicit model binding, route groups, named routes, throttling. |
-| Controllers | In Progress | Controller actions, Eloquent serialization, implicit binding in controllers; store and request validation are next. |
+| Controllers | In Progress | Controller actions, Eloquent serialization, implicit binding, Request input, basic validation, Mass Assignment, HTTP response semantics, and Product store implementation; final endpoint verification remains. |
 | Middleware | Not Started | Request filtering, cross-cutting concerns, auth, throttling, custom middleware. |
 | Requests | Not Started | Form requests, validation rules, authorization, input normalization. |
 | Responses | Not Started | Redirects, JSON responses, resources, API consistency, error responses. |
@@ -26,7 +26,7 @@ Statuses:
 | Configuration | Not Started | Config files, environment variables, caching, production configuration. |
 | Database | Not Started | Migrations, transactions, indexes, constraints, schema design. |
 | Query Builder | Not Started | Fluent queries, joins, aggregates, pagination, performance. |
-| Eloquent | In Progress | Models, internal state, attributes, original snapshots, dirty checking, hydration, builders. |
+| Eloquent | In Progress | Models, internal state, attributes, original snapshots, dirty checking, hydration, builders, and basic mass-assignment safeguards. |
 | Relationships | Not Started | One-to-one, one-to-many, many-to-many, polymorphic relations, eager loading. |
 | Authentication | Not Started | Guards, providers, sessions, tokens, starter kits, security basics. |
 | Authorization | Not Started | Gates, policies, roles, permissions, domain authorization decisions. |
