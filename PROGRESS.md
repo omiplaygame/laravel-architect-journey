@@ -9,7 +9,7 @@ This file tracks the current learning state and should be updated after every le
 | Current lesson | Lesson 008: Controllers (Basics) |
 | Current milestone | Controllers |
 | Overall progress percentage | 7% |
-| Last updated | 2026-11-11 |
+| Last updated | 2026-11-12 |
 
 ## Completed Lessons
 
@@ -18,7 +18,7 @@ This file tracks the current learning state and should be updated after every le
 
 ## In Progress
 
-- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, and show action with implicit Route Model Binding completed; next: store action.
+- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, show action with implicit Route Model Binding, Request input, basic validation, Mass Assignment, and HTTP response semantics completed in practice. Product store implementation is in place; final endpoint verification remains.
 
 ## Knowledge Acquired
 
@@ -33,6 +33,8 @@ This file tracks the current learning state and should be updated after every le
 - A second `save()` with no changes usually does not issue an `UPDATE`.
 - Eloquent uses convention over configuration for default table names.
 - Eloquent Builder wraps Query Builder while preserving model-level behavior.
+- Mass assignment is a separate model operation governed by `$fillable` or `$guarded`.
+- `fill()` performs mass assignment without persistence; `create()` mass-assigns and persists; explicit attribute assignment followed by `save()` does not use mass-assignment rules.
 
 ### Routing and Route Groups
 
@@ -54,6 +56,20 @@ This file tracks the current learning state and should be updated after every le
 - Model serialization is affected by visibility and serialization configuration.
 - Implicit Route Model Binding works in controller actions through a matching route placeholder and typed model argument.
 - Missing bound models result in HTTP 404 without a manual lookup in the controller.
+- Laravel injects the current `Illuminate\Http\Request` into controller actions.
+- `input()` reads request input from the body and query string; `query()` reads only query-string parameters.
+- `all()` returns all input data and should not be treated as a safe persistence allowlist.
+- `$request->validate()` returns only validated fields and automatically produces HTTP 422 for JSON validation failures.
+- `nullable` allows a field to be null; validation rules express the accepted input contract.
+- `$fillable` is an explicit allowlist for mass-assignment operations.
+- `$guarded` is the alternative denylist strategy; configuring both is generally unnecessary.
+- `fill()` performs mass assignment without saving; `create()` performs mass assignment and persistence.
+- Explicit model attribute assignment followed by `save()` does not use `$fillable`.
+- `preventSilentlyDiscardingAttributes()` can make unfillable mass-assignment mistakes visible during development.
+- Validation and mass-assignment protection are separate safeguards.
+- `response()->json($data, $status)` explicitly creates a JSON response with a chosen status.
+- HTTP 201 is appropriate when a resource is created; HTTP 204 represents success without a response body.
+- An explicitly selected response status is not automatically inferred from arbitrary business outcomes.
 
 ## Senior Skills Acquired
 
@@ -66,12 +82,15 @@ This file tracks the current learning state and should be updated after every le
 - Organizing routes by shared URI, naming, and middleware concerns.
 - Choosing controller actions over route closures for related HTTP behavior.
 - Recognizing model serialization as an API data-exposure boundary.
+- Separating untrusted request input from validated application input.
+- Applying defense in depth through validation and explicit mass-assignment configuration.
+- Choosing HTTP response status codes based on the operation's semantics.
 
 ## Practice Completed
 
 - Lesson 006: Eloquent Internals — practice tasks recorded.
 - Lesson 007: Routing and Route Groups — route parameters, implicit and explicit binding, route groups, named routes, and throttling verified.
-- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, and show action with implicit binding verified. Store action remains pending.
+- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, show action with implicit binding, Request input, validation experiments, Mass Assignment experiments, response semantics, and core Product store implementation completed. Final store endpoint verification remains.
 
 ## Mini-Projects Completed
 
