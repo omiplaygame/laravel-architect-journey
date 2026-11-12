@@ -6,19 +6,20 @@ This file tracks the current learning state and should be updated after every le
 
 | Field | Value |
 | --- | --- |
-| Current lesson | Lesson 008: Controllers (Basics) |
-| Current milestone | Controllers |
-| Overall progress percentage | 7% |
+| Current lesson | Lesson 009: Form Requests |
+| Current milestone | Requests |
+| Overall progress percentage | 8% |
 | Last updated | 2026-11-12 |
 
 ## Completed Lessons
 
 - Lesson 006: Eloquent Internals
 - Lesson 007: Routing and Route Groups
+- Lesson 008: Controllers (Basics)
 
 ## In Progress
 
-- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, show action with implicit Route Model Binding, Request input, basic validation, Mass Assignment, and HTTP response semantics completed in practice. Product store implementation is in place; final endpoint verification remains.
+- Lesson 009: Form Requests — next topic. Learn how to extract validation and request authorization into dedicated request classes, and when that separation is justified.
 
 ## Knowledge Acquired
 
@@ -48,7 +49,7 @@ This file tracks the current learning state and should be updated after every le
 - Named routes provide stable URL generation through `route()`.
 - Throttling middleware can reject excessive requests with HTTP 429.
 
-### Controllers (In Progress)
+### Controllers
 
 - Controllers group related HTTP actions and keep route definitions focused.
 - Routes map to controller actions using `[Controller::class, 'method']`.
@@ -70,6 +71,7 @@ This file tracks the current learning state and should be updated after every le
 - `response()->json($data, $status)` explicitly creates a JSON response with a chosen status.
 - HTTP 201 is appropriate when a resource is created; HTTP 204 represents success without a response body.
 - An explicitly selected response status is not automatically inferred from arbitrary business outcomes.
+- A basic `store()` action validates request data, passes only validated fields to `Product::create()`, and returns the created model with HTTP 201.
 
 ## Senior Skills Acquired
 
@@ -85,12 +87,13 @@ This file tracks the current learning state and should be updated after every le
 - Separating untrusted request input from validated application input.
 - Applying defense in depth through validation and explicit mass-assignment configuration.
 - Choosing HTTP response status codes based on the operation's semantics.
+- Implementing and manually verifying a basic resource-creation endpoint.
 
 ## Practice Completed
 
 - Lesson 006: Eloquent Internals — practice tasks recorded.
 - Lesson 007: Routing and Route Groups — route parameters, implicit and explicit binding, route groups, named routes, and throttling verified.
-- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, show action with implicit binding, Request input, validation experiments, Mass Assignment experiments, response semantics, and core Product store implementation completed. Final store endpoint verification remains.
+- Lesson 008: Controllers (Basics) — controller creation, index action, Eloquent collection serialization, show action with implicit binding, Request input, validation, Mass Assignment, response semantics, and Product store implementation verified. The user confirmed successful and invalid inputs, omitted and null description, and extra fields behaved as expected.
 
 ## Mini-Projects Completed
 
