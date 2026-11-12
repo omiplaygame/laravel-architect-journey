@@ -51,10 +51,7 @@ public function show(Product $product)
 }
 ```
 
-Expected behavior:
-- Existing product ID returns HTTP 200 and the serialized product.
-- Missing product ID returns HTTP 404.
-- The controller does not need a manual `where()`, `find()`, or `firstOrFail()` query.
+Verified that an existing product was returned and a missing model is resolved as HTTP 404.
 
 ### 5. Explore HTTP Request Input
 
@@ -110,7 +107,7 @@ Reviewed:
 - `204 No Content` for a successful response without a body.
 - `response()->json($data, $status)` for explicit JSON response construction.
 
-### 9. Implement Product Store
+### 9. Implement and Verify Product Store
 
 Route:
 
@@ -118,7 +115,7 @@ Route:
 Route::post('/products', [ProductController::class, 'store']);
 ```
 
-Implemented controller action:
+Controller action:
 
 ```php
 public function store(Request $request)
@@ -135,16 +132,13 @@ public function store(Request $request)
 }
 ```
 
-Observed a created Product JSON response containing the generated ID and timestamps. The implementation uses validated data for persistence and returns HTTP 201.
-
-## Remaining Verification
-
-Before marking the store exercise fully verified, confirm:
-- Invalid `price` returns HTTP 422 from the actual `POST /products` endpoint.
-- Missing `name` returns HTTP 422 from the actual `POST /products` endpoint.
-- An extra client field such as `is_admin` is not persisted or returned as a model attribute.
-- `description` may be omitted because it is nullable.
+The user verified:
+- A valid payload creates a Product and returns its JSON representation with HTTP 201.
+- Invalid price and missing required name produce the expected validation errors (HTTP 422).
+- `description` may be omitted or supplied as null.
+- Extra fields such as `is_admin` do not enter the validated data or persisted model.
+- The created response includes the generated ID and timestamps.
 
 ## Status
 
-In Progress — controller basics, request input, validation, mass assignment, response semantics, and the core store implementation have been practiced. Final store endpoint verification remains.
+Completed — controller basics, Request input, validation, Mass Assignment, response semantics, and the Product store endpoint were implemented and manually verified.
