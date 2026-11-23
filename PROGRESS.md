@@ -6,9 +6,9 @@ This file tracks the current learning state and should be updated after every le
 
 | Field | Value |
 | --- | --- |
-| Current lesson | Lesson 011: Request Authorization and Input Normalization |
-| Current milestone | Requests |
-| Overall progress percentage | 14% |
+| Current lesson | Lesson 013: Resource Collections and Response Structure |
+| Current milestone | Responses |
+| Overall progress percentage | 20% |
 | Last updated | 2026-11-23 |
 
 ## Completed Lessons
@@ -18,10 +18,12 @@ This file tracks the current learning state and should be updated after every le
 - Lesson 008: Controllers (Basics)
 - Lesson 009: Form Requests
 - Lesson 010: Validation Rules
+- Lesson 011: Request Authorization and Input Normalization
+- Lesson 012: API Resources
 
 ## In Progress
 
-- Lesson 011: Request Authorization and Input Normalization — apply Form Request authorization and normalize request data deliberately.
+- Lesson 013: Resource Collections and Response Structure — apply Resources consistently to collections and response envelopes.
 
 ## Knowledge Acquired
 
@@ -87,6 +89,14 @@ This file tracks the current learning state and should be updated after every le
 - A missing route-bound model produces HTTP 404; binding does not authorize access.
 - Form Request validation errors return HTTP 422 for requests that expect JSON; browser-style requests may use redirect-and-error-session behavior.
 
+### Request Authorization and Input Normalization
+
+- Form Request `authorize()` determines whether a request may proceed; a denied request returns HTTP 403 before the controller action.
+- Authentication, resource binding, authorization, and validation are separate concerns.
+- `prepareForValidation()` runs before validation and can normalize request input with `input()` and `merge()`.
+- Guard string normalization with `is_string()` when input may be missing or malformed.
+- Standard `TrimStrings` middleware may trim input before the Form Request; normalization such as lowercasing email is an explicit application policy.
+
 ### Validation Rules
 
 - `sometimes` controls whether field rules run when the field is present; it does not itself require a non-empty value or reject null.
@@ -99,6 +109,13 @@ This file tracks the current learning state and should be updated after every le
 - `Rule::exists('users', 'id')` verifies that a referenced row exists.
 - `exists` does not authorize use of the referenced record.
 - Database UNIQUE constraints and FOREIGN KEY constraints remain the final integrity boundary; validation alone can be subject to race conditions.
+
+### API Resources
+
+- `JsonResource::toArray()` defines an explicit public representation of a model.
+- Returning `new UserResource($user)` directly lets Laravel create the JSON response.
+- Single Resources are wrapped in `data` by default.
+- Model serialization and the API contract are separate; explicitly selecting fields prevents accidental exposure when the database model grows.
 
 ## Senior Skills Acquired
 
@@ -115,6 +132,9 @@ This file tracks the current learning state and should be updated after every le
 - Applying defense in depth through validation and explicit mass-assignment configuration.
 - Choosing HTTP response status codes based on the operation's semantics.
 - Implementing and manually verifying a basic resource-creation endpoint.
+- Distinguishing authorization from validation and verifying HTTP 403 behavior.
+- Normalizing request data at the request boundary before validation.
+- Designing explicit API output contracts with JsonResource.
 
 
 - Separating request-specific validation from controller actions with Form Requests.
@@ -131,6 +151,8 @@ This file tracks the current learning state and should be updated after every le
 
 - Lesson 009: Form Requests — created and injected Form Requests, verified validated data, route-bound update model resolution, HTTP 404 for a missing model, and JSON validation HTTP 422 with the appropriate Accept header.
 - Lesson 010: Validation Rules — verified `sometimes`, `required`, `nullable`, `filled`, unique email on create, `Rule::unique()->ignore()` on update, and `Rule::exists()` against the users table.
+- Lesson 011: Request Authorization and Input Normalization — verified HTTP 403 for denied authorization and normalized input before validation.
+- Lesson 012: API Resources — generated UserResource, explicitly selected public fields, returned the Resource directly, and verified the `data` envelope and ISO 8601 timestamp.
 
 ## Mini-Projects Completed
 
