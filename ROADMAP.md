@@ -17,8 +17,8 @@ Statuses:
 | Routing | Completed | Route parameters, implicit and explicit model binding, route groups, named routes, throttling. |
 | Controllers | Completed | Controller actions, Eloquent serialization, implicit binding, Request input, basic validation, Mass Assignment, HTTP response semantics, and a verified Product store endpoint. |
 | Middleware | Not Started | Request filtering, cross-cutting concerns, auth, throttling, custom middleware. |
-| Requests | In Progress | Form Requests and verified validation rules (optional fields, unique, exists); request authorization and input normalization remain. |
-| Responses | Not Started | Redirects, JSON responses, resources, API consistency, error responses. |
+| Requests | Completed | Form Requests, optional field semantics, unique/exists validation, request authorization, and input normalization verified. |
+| Responses | In Progress | JSON responses and single-model API Resources verified; collections and consistent response structure remain. |
 | Views | Not Started | View composition, data passing, layout organization. |
 | Blade | Not Started | Components, slots, directives, view models, maintainable templates. |
 | Service Container | Not Started | Bindings, resolution, contextual binding, lifecycle, abstractions. |
