@@ -6,9 +6,9 @@ This file tracks the current learning state and should be updated after every le
 
 | Field | Value |
 | --- | --- |
-| Current lesson | Lesson 010: Validation Rules |
+| Current lesson | Lesson 011: Request Authorization and Input Normalization |
 | Current milestone | Requests |
-| Overall progress percentage | 11% |
+| Overall progress percentage | 14% |
 | Last updated | 2026-11-23 |
 
 ## Completed Lessons
@@ -17,10 +17,11 @@ This file tracks the current learning state and should be updated after every le
 - Lesson 007: Routing and Route Groups
 - Lesson 008: Controllers (Basics)
 - Lesson 009: Form Requests
+- Lesson 010: Validation Rules
 
 ## In Progress
 
-- Lesson 010: Validation Rules — optional fields (`sometimes`, `required`, `nullable`, `filled`), database-backed `unique` and `exists` rules, and their relationship to Route Model Binding, authorization, and database constraints. Request authorization and input normalization remain to be covered in the Requests milestone.
+- Lesson 011: Request Authorization and Input Normalization — apply Form Request authorization and normalize request data deliberately.
 
 ## Knowledge Acquired
 
