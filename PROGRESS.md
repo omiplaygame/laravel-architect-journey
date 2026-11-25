@@ -6,10 +6,10 @@ This file tracks the current learning state and should be updated after every le
 
 | Field | Value |
 | --- | --- |
-| Current lesson | Lesson 013: Resource Collections and Response Structure |
+| Current lesson | Lesson 014: API Response Envelope and Resource Wrapping |
 | Current milestone | Responses |
 | Overall progress percentage | 20% |
-| Last updated | 2026-11-23 |
+| Last updated | 2026-11-25 |
 
 ## Completed Lessons
 
@@ -20,10 +20,11 @@ This file tracks the current learning state and should be updated after every le
 - Lesson 010: Validation Rules
 - Lesson 011: Request Authorization and Input Normalization
 - Lesson 012: API Resources
+- Lesson 013: Resource Collections and Response Structure
 
 ## In Progress
 
-- Lesson 013: Resource Collections and Response Structure — apply Resources consistently to collections and response envelopes.
+- Lesson 014: API Response Envelope and Resource Wrapping — understand the default `data` wrapper and configure consistent API response structure.
 
 ## Knowledge Acquired
 
@@ -115,6 +116,9 @@ This file tracks the current learning state and should be updated after every le
 - `JsonResource::toArray()` defines an explicit public representation of a model.
 - Returning `new UserResource($user)` directly lets Laravel create the JSON response.
 - Single Resources are wrapped in `data` by default.
+- `Resource::collection($paginator)` transforms each model while preserving pagination links and metadata.
+- Paginated Resource responses contain `data`, `links`, and `meta`; pagination fields such as `current_page` are inside `meta`.
+- `paginate(10)` returns a length-aware paginator; page parameters select records, and an out-of-range page may have an empty `data` array.
 - Model serialization and the API contract are separate; explicitly selecting fields prevents accidental exposure when the database model grows.
 
 ## Senior Skills Acquired
@@ -135,6 +139,8 @@ This file tracks the current learning state and should be updated after every le
 - Distinguishing authorization from validation and verifying HTTP 403 behavior.
 - Normalizing request data at the request boundary before validation.
 - Designing explicit API output contracts with JsonResource.
+- Applying the same Resource representation to single models and paginated collections.
+- Reading pagination links and metadata as part of an API response contract.
 
 
 - Separating request-specific validation from controller actions with Form Requests.
@@ -153,6 +159,7 @@ This file tracks the current learning state and should be updated after every le
 - Lesson 010: Validation Rules — verified `sometimes`, `required`, `nullable`, `filled`, unique email on create, `Rule::unique()->ignore()` on update, and `Rule::exists()` against the users table.
 - Lesson 011: Request Authorization and Input Normalization — verified HTTP 403 for denied authorization and normalized input before validation.
 - Lesson 012: API Resources — generated UserResource, explicitly selected public fields, returned the Resource directly, and verified the `data` envelope and ISO 8601 timestamp.
+- Lesson 013: Resource Collections and Response Structure — tested paginator directly and through `UserResource::collection()`, verified page navigation, Resource field filtering, pagination metadata under `meta`, and empty data for an out-of-range page.
 
 ## Mini-Projects Completed
 
