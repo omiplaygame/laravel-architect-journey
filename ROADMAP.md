@@ -18,7 +18,7 @@ Statuses:
 | Controllers | Completed | Controller actions, Eloquent serialization, implicit binding, Request input, basic validation, Mass Assignment, HTTP response semantics, and a verified Product store endpoint. |
 | Middleware | Not Started | Request filtering, cross-cutting concerns, auth, throttling, custom middleware. |
 | Requests | Completed | Form Requests, optional field semantics, unique/exists validation, request authorization, and input normalization verified. |
-| Responses | In Progress | JSON responses and single-model API Resources verified; collections and consistent response structure remain. |
+| Responses | In Progress | Single-model Resources, Resource collections, and pagination verified; consistent response envelopes and wrapping configuration remain. |
 | Views | Not Started | View composition, data passing, layout organization. |
 | Blade | Not Started | Components, slots, directives, view models, maintainable templates. |
 | Service Container | Not Started | Bindings, resolution, contextual binding, lifecycle, abstractions. |
